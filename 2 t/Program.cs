@@ -63,8 +63,17 @@ void PrintArray (int[] array)
 }
 int[] sunarray = RowsSums(resultmatrix);
 PrintArray(sunarray);
+Console.WriteLine();
 
-int MinSumRowSearch(int[] arr)
+void MinRow(int[] arr)
 {
-    
+    int min = arr[0];
+    int index = 0;
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if (arr[i] < arr[0]) min = arr[i];
+        index++;
+    }
+    Console.WriteLine($"Минимальная сумма равна {min} и находится на {index} строке");
 }
+MinRow(sunarray);
