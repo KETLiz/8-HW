@@ -50,22 +50,22 @@ PrintMatrix(secondmatrix);
 Console.WriteLine("Результат умножения двух матриц: ");
 
 int[,] MatrixMultiplication(int[,] fmatr, int[,] smatr)
-{
-    
-    int[,] resultmatr = new int[fmatr.GetLength(0), smatr.GetLength(1)];
-    for (int i = 0; i < fmatr.GetLength(0); i++)
-    {
-        for (int j = 0; j < smatr.GetLength(1); j++)
+{ 
+        int[,] resultmatr = new int[fmatr.GetLength(0), smatr.GetLength(1)];
+        for (int i = 0; i < fmatr.GetLength(0); i++)
         {
-            resultmatr[i, j] = 0;
-            for (int k = 0; k < fmatr.GetLength(0); k++)
+            for (int j = 0; j < smatr.GetLength(1); j++)
             {
-                resultmatr[i, j] += fmatr[i, k]*smatr[k, j];
+                resultmatr[i, j] = 0;
+                for (int k = 0; k < fmatr.GetLength(0); k++)
+                {
+                    resultmatr[i, j] += fmatr[i, k]*smatr[k, j];
+                }
             }
+            
         }
-        
-    }
-    return resultmatr;
+        return resultmatr;
+    
 }
 
 int[,] result = MatrixMultiplication(firstmatrix, secondmatrix);
